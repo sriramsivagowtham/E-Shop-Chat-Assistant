@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatbot</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <header >
+        <h1 class="tag1">ELECTRONIC PRODUCTS</h1>
+        <a href="{% url 'app:register' %}" class="logout-btn">LOGOUT</a>
+        <a href="{% url 'app:order' %}" class="order-btn">ORDER</a>
+        <a href="/add/" class="admin-btn">ADD</a>
+ 
+    </header>
+
+    <div class="products-container">
+        {% for products in product %}
+        <div class="card">
+            <img  class="card-img" src="{{ products.image.url }}" alt="{{ products.name }}">
+            
+
+            <h5 class="h4">{{ products.name|upper }}</h5>
+            <h4 class="h5">PRICE: ₹ {{ products.price }}</h4>
+            <h5 class="h5">{{ products.content| truncatechars:25 }}</h5> 
+            <a href="{% url 'app:full_de' products.id %}">Read more..</a>
+           
+            
+            
+        </div>
+        {% endfor %}
+    </div>
+    <div id="chatbot-icon">
+        💭
+    </div>
+    <div id="chatbot-container" class="hidden">
+        <div id="chatbot-header">Chatbot</div>
+        <div id="close-btn">&times;</div>
+        <div id="chatbot-body">
+            <div id="chatbot-messages"></div>
+        </div>
+        <div id="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="type a message....">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

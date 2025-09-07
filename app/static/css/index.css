@@ -1,0 +1,226 @@
+
+
+
+body{
+    font-family:sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    position: relative;
+}
+.order-btn{
+    text-decoration: none;
+    color: #e6e1e192;
+    position: absolute;
+    top: 10px;
+    right: 90px;    
+}
+.order-btn:hover {
+    color: floralwhite;
+    transform: translate(1)
+}
+.logout-btn{
+    text-decoration: none;
+    color:  #e6e1e192;
+    position: absolute; 
+    top: 10px;
+    left: 15px;
+}
+.logout-btn:hover {
+    color: floralwhite;
+    transform: translate(1)
+}
+
+.admin-btn{
+    text-decoration: none;
+    color:  #e6e1e192;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+.admin-btn:hover {
+    color: floralwhite;
+    transform: translate(1)
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    justify-items: center; 
+    align-items: center; 
+}
+
+.card{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    padding: 15px;
+    text-align: center;
+    /* transition:transform 0.5s ease-in-out; */
+    width: 200px;
+    height: 218px;
+    margin: none;
+   cursor: pointer;
+
+}
+.card-img{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    /* border-radius: 15px; */
+}
+.h4{
+    /* margin-top: 10px; */
+    color:  #333;
+}
+.h5{
+    margin:0;
+    color:  #333;
+    padding: 0;
+}
+/* .card:hover {
+    transform: scale(1.05);
+} */
+
+
+/* chatbot */
+
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(10, 25, 47, 0.9);
+    position: relative;
+}
+#chatbot-icon{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(50deg, #4fc3f7, #29c9a4);
+    color: white;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.084);
+    cursor: pointer;
+    transition: transform 0.2s,
+    background-color 0.5s;
+    z-index:1;  
+}
+#chatbot-icon:hover{
+    transform: scale(1.1);
+}
+#chatbot-container{
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 310px;
+    height: 450px;
+    background-color: #daecf0;
+    border-radius: 15px;
+    box-shadow:#4fc3f7;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 99
+}
+
+.hidden{
+    display: none !important;
+}                    
+#chatbot-header{
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color:  #fafcff;
+    padding: 15px;
+    border-top-left-radius: 15px;
+    border-top-left-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 28px;
+}
+
+#close-btn{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    position: fixed;
+    top: 65px;
+    right: 30px;
+
+}
+#chatbot-body{
+    flex: 1;
+    padding: 10px;
+    /* overflow-y: auto; */
+
+}
+#chatbot-messages {
+    max-height: 300px;       
+    overflow-y: auto;        
+    padding: 5px;
+}
+.message{
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 85%;
+}
+.message.user{
+    background-color: #3b82f6;
+    color: white;
+    align-self: flex-end;
+}
+.message.bot{
+    background-color:   #e0e7ffe1  ;
+    color:#1e293b
+    /* align-self: flex-start; */
+}
+
+#chatbot-input-container{
+    display: flex;
+    padding: 10px;
+    border-top: 10px;
+    background-color: #f7f7f7;
+}
+
+#chatbot-input{
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #444;
+    background-color: #eadada;
+    border-radius: 10px ;
+    color: rgb(28, 25, 25);
+    font-size: medium;
+}
+#send-btn{
+    margin-left: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #5350c4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+#send-btn:hover{
+    background-color: #3d39ac;
+}
+
+
+
+
+
+

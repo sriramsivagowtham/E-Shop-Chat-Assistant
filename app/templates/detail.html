@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-shope</title>
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+</head>
+<body>
+    <header >
+        <h1 class="tag1">ELECTRONIC PRODUCTS</h1>
+        <a href="{% url 'app:order' %}" class="order-btn">ORDER</a>
+        <a href="/add/" class="admin-btn">ADD</a>
+ 
+    </header>
+        <div class="card">
+            {% if add.image %}
+            <img class="card-img" src="{{ add.image.url }}" alt="{{ add.name }}">
+            {% endif %}
+            <h3 class="h4">{{ add.name|upper }}</h3>
+            <h5 class="h6">{{ add.content}}</h5>
+            
+            <h4 id="price" class="h5">PRICE: ₹ {{ add.price }}</h4>
+            <h4 id="stack">Available Stack : <span id="quantity">{{ add.quantity }} <span>pieces only</span> </span></h4>
+            <!-- <h4 id="stack">Available Stack: <span id="quantity">10 Pieces only</span></h4> -->
+           
+            
+            
+        </div>
+        <form action="{% url 'app:place' %}">
+            <h4 id="oredr">ORDER</h4>
+            <div  id="item" class="form-group">
+                <label for="calculate">Item:</label>
+                <input type="text" id="calculate" placeholder="Item name">
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="text" id="buy-quantity" placeholder="Quantity">
+            </div>
+
+            <div class="form-group">
+                <label for="total">Total:</label>
+                <input type="text" id="total" placeholder="Total amount">
+            </div>
+
+            <button >Submit</button>
+        </form>
+    <script src="{% static 'js/details.js' %}"></script>
+     
+
+
+</body>
+</html>
